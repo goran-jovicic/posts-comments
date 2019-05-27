@@ -19,4 +19,9 @@ class Post extends Model
         'title' => 'required',
         'body' => 'required | min:15'
     ];
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
