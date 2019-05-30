@@ -24,3 +24,13 @@ Route::get('/posts/{id}', ['as' => 'single-post', 'uses' => 'PostsController@sho
 Route::post('/posts', ['as' => 'store-post', 'uses' => 'PostsController@store']);
 
 Route::post('/posts/{postId}/comments', ['as' => 'comments-post', 'uses' => 'CommentsController@store']);
+
+Route::get('/register', ['as' => 'register-user', 'uses' => 'RegisterController@create']);
+
+Route::post('/register', ['as' => 'register-store', 'uses' => 'RegisterController@store']);
+
+Route::get('/logout', ['as' => 'logout-user', 'uses' => 'LoginController@destroy']);
+
+Route::get('/login', ['as' => 'login-user', 'uses' => 'LoginController@create']);
+
+Route::post('/login', ['as' => 'post-user', 'uses' => 'LoginController@store']);
