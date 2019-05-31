@@ -12,7 +12,7 @@ class Post extends Model
 
     public static function published()
     {
-        return self::where('published', true)->get();
+        return self::where('published', true);
     }
 
     const STORE_RULES = [
@@ -23,5 +23,10 @@ class Post extends Model
     public function comments()
     {
         return $this->hasMany(Comment::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

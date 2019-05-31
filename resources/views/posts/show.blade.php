@@ -6,6 +6,9 @@
 
     <h1 class="blog-post-title">{{$post->title}}</h1>
     <p>{{$post->body}}</p>
+    @if($post->user_id)
+    <h2> Author : {{$post->user->name}}</h2>
+    @endif
     @if(count($post->comments))
         <h4>Comments:</h4>
             <ul>

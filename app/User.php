@@ -42,4 +42,9 @@ class User extends Authenticatable
         'email' => 'required | email',
         'password' => 'required | min:8'
     ];
+
+    public function post()
+    {
+        return $this->hasMany(Post::class);
+    }
 }
