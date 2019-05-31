@@ -8,10 +8,10 @@
     @foreach ($posts as $post)
         <h1>
             <a href="{{'/posts/' . $post->id}}">{{$post->title}}</a>
-            @if($post->user_id)
-            <span> {{$post->user->name}}</span>
-            @endif
         </h1>
+            @if($post->user_id)
+            <span style="text-transform: capitalize; font-size: 2rem;"> {{$post->user->name}}</span>
+            @endif
     @endforeach
 </ul>
 

@@ -34,3 +34,5 @@ Route::get('/logout', ['as' => 'logout-user', 'uses' => 'LoginController@destroy
 Route::get('/login', ['as' => 'login-user', 'uses' => 'LoginController@create']);
 
 Route::post('/login', ['as' => 'post-user', 'uses' => 'LoginController@store']);
+
+Route::get('/user/{id}', ['as' => 'user-posts', 'uses' => 'UsersController@show']);

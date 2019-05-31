@@ -19,7 +19,6 @@ class PostsController extends Controller
     {   
         // if(Auth::check()){
             $posts = Post::published()->with('user')->get();
-            // $posts->post();
             
             \Log::info($posts);
             
