@@ -37,3 +37,5 @@ Route::get('/login', ['as' => 'login-user', 'uses' => 'LoginController@create'])
 Route::post('/login', ['as' => 'post-user', 'uses' => 'LoginController@store']);
 
 Route::get('/user/{id}', ['as' => 'user-posts', 'uses' => 'UsersController@show']);
+
+Route::post('/tags/store', ['as'=> 'store-tags', 'uses' => 'TagsController@store']);

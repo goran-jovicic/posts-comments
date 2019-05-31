@@ -6,6 +6,16 @@
 
     <h1 class="blog-post-title">{{$post->title}}</h1>
     <p>{{$post->body}}</p>
+
+    @if(count($post->tags))
+        <ul>
+            @foreach($post->tags as $tag)
+            <li>
+                <a href="">{{$tag->name}}</a>
+            </li>
+            @endforeach
+        </ul>
+    @endif
     @if($post->user_id)
     <h2 style="text-transform: capitalize;"> Author : {{$post->user->name}}</h2>
     @endif
