@@ -12,7 +12,8 @@
             type="text" 
             class="form-control" 
             id="name" 
-            name="name"/>
+            name="name"
+            required />
             @include ('partials.error-message', ['fieldTitle' => 'name'])
         </div>
 
@@ -22,7 +23,8 @@
             type="text" 
             class="form-control" 
             id="email" 
-            name="email"/>
+            name="email"
+            required />
             @include ('partials.error-message', ['fieldTitle' => 'email'])
         </div>
 
@@ -32,8 +34,19 @@
             type="password" 
             class="form-control" 
             id="password" 
-            name="password"/>
+            name="password"
+            required />
             @include ('partials.error-message', ['fieldTitle' => 'password'])
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input
+            type="text"
+            class="form-control"
+            id="age"
+            name="age"
+            required />
         </div>
 
         <div class="form-group">

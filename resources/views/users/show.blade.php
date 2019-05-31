@@ -13,7 +13,7 @@
                 <h2 class="blog-post-title">
                     <a href="/posts/{{$post->id}}"> {{$post->title}}</a>
                 </h2>
-                <p>{{ $post->created_at }}</p>
+                <p>{{ $post->created_at->toFormattedDateString()}}</p>
                 <div class="blog-post">
                     {{ $post->body }}
                 </div>

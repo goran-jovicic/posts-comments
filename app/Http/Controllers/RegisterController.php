@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\User;
+use App\Http\Middleware\CheckAge;
 
 class RegisterController extends Controller
 {
@@ -12,6 +13,7 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        $this->middleware('age', ['only' => 'store']);
     }
 
     public function create()
@@ -21,6 +23,7 @@ class RegisterController extends Controller
 
     public function store(Request $request)
     {
+
         $this->validate(request(), User::STORE_RULES);
 
         // $user = User::create(request()->all());
