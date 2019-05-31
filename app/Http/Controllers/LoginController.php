@@ -26,6 +26,8 @@ class LoginController extends Controller
            ]);
         }
 
+        session()->flash('message', 'Jako si divan sto si se ulogovao');
+
         return redirect('/posts');
     }
 

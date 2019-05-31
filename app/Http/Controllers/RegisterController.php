@@ -37,6 +37,8 @@ class RegisterController extends Controller
         $user->save();
 
         auth()->login($user);
+
+        session()->flash('message', 'Jako si divan sto si se registrovao');
         
         return redirect()->route('all-posts');
     }   
