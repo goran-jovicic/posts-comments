@@ -25,7 +25,7 @@ class PostsController extends Controller
         $post = Post::with('comments')->FindOrFail($id);
         \Log::info($post);
         // $post = Post::where('id', $id)->first();
-        $posts = Post::orderBy('id', 'desc')->take(4)->get();
+        // $posts = Post::orderBy('id', 'desc')->take(4)->get();
 
         return view('posts.show',compact('post','posts'));
     }
