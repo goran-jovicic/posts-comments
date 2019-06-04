@@ -16,13 +16,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/posts', ['as' => 'all-posts', 'uses' => 'PostsController@index']);
 Route::get('/posts/create', ['as' => 'create-post', 'uses' => 'PostsController@create']);
-Route::get('/posts/{id}', ['as' => 'single-post', 'uses' => 'PostsController@show']);
+
 Route::post('/posts', ['as' => 'store-post', 'uses' => 'PostsController@store']);
 
+Route::get('/posts', ['as' => 'all-posts', 'uses' => 'PostsController@index']);
 
-
+Route::get('/posts/{id}', ['as' => 'single-post', 'uses' => 'PostsController@show']);
 
 Route::post('/posts/{postId}/comments', ['as' => 'comments-post', 'uses' => 'CommentsController@store']);
 

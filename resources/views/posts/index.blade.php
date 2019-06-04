@@ -15,10 +15,26 @@
                 </span>
                 @endif
         @endforeach
-</ul>
+    </ul>
+
+    <nav class="blog-pagination">
+        <a 
+        class="btn btn-outline-{{ $posts->currentPage() === 1 ? 'disabled' : 'primary'}}"
+        href="{{ $posts->previousPageUrl() }}">
+        Previous
+        </a>
+        <a 
+        class="btn btn-outline-{{ $posts->hasMorePages() ? 'primary' : 'disabled'}}"
+        href="{{ $posts->nextPageUrl() }}">
+        Next
+        </a>
+
+        Page {{ $posts->currentPage() }} of {{ $posts->lastPage() }}
+    </nav>
 
     <div class="form-group">
-            <a href="/posts/create"><button style="margin-left: 2rem;" type="submit" class="btn btn-primary">Create Post</button></a>
+        <a href="/posts/create"><button style="margin-left: 2rem;" type="submit" class="btn btn-primary">Create Post</button></a>
     </div>
+    
 
 @endsection
