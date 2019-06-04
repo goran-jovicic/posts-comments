@@ -6,12 +6,12 @@
     
     <ul>
         @foreach ($posts as $post)
-            <h1>
-                <a href="{{'/posts/' . $post->id}}">{{$post->title}}</a>
-            </h1>
+            <li>
+                <a href="{{'/posts/' . $post->id}}" style="font-size:2rem;">{{$post->title}}</a>
+            </li>
                 @if($post->user_id)
-                <span style="text-transform: capitalize; font-size: 2rem;">
-                    <a href="/user/{{$post->user_id}}">{{$post->user->name}}</a>
+                <span style="text-transform: capitalize; font-size: 1rem;">
+                    <a href="/user/{{$post->user_id}}">Created by : <span style="font-weight: bold;">{{ $post->user->name }} </span></a>
                 </span>
                 @endif
         @endforeach
