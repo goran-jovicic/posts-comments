@@ -10,12 +10,13 @@ class CommentsController extends Controller
 {
     public function store($postId)
     {
+        // dd('stagod');
         $post = Post::find($postId);
 
         $post->comments()->create(request()->all());
-
+        // dd('stagod');
         \Mail::to($post->user)->send(new CommentRecieved($post));
-
-        return redirect()->route('single-post', ['id' => $postId]);
+        
+        return back();
     }
 }

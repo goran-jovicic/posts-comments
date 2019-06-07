@@ -22,6 +22,7 @@ class CommentRecieved extends Mailable
     public function __construct(Post $post)
     {
         $this->post = $post;
+        // dd('stagod');
     }
 
     /**
@@ -31,6 +32,6 @@ class CommentRecieved extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.comment-received');
+        return $this->view('emails.comment-recieved');
     }
 }

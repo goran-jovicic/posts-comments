@@ -5,6 +5,8 @@ namespace Tests\Unit;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\Tag;
+use App\Post;
 
 class TagsTableTest extends TestCase
 {
@@ -14,12 +16,12 @@ class TagsTableTest extends TestCase
      * @return void
      */
 
-    public function testTagsTableTest()
-    {
-        
-    }
-}
+    // public function testTagsTableTest()
+    // {
+     
+    // }
 
+}
 // $post = factory(Post::class)->make();
 // $user = factory(User::class)->create();
 

@@ -15,4 +15,9 @@ class Tag extends Model
     {
         return 'name';
     }
+
+    protected $fillable = [
+        'name',
+    ];
+
 }
