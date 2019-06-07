@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\User;
+use App\Post;
 
 class ExampleTest extends TestCase
 {
@@ -27,11 +28,22 @@ class ExampleTest extends TestCase
         $response->assertStatus(404);
     }
 
-    public function testPostRouteTest()
+    public function testPostValid()
     {
-        $response = $this->get('/posts/{id}');
+        $post = factory(Post::class)->create();
+
+        $response = $this->get('/posts/' . $post->id);
 
         $response->assertStatus(200);
+    }
+
+    public function testPostInvalid()
+    {
+        $post = factory(Post::class)->create();
+
+        $response = $this->get('/posts/{id}');
+
+        $response->assertStatus(404);
     }
 
     public function testCreateValid()
@@ -46,14 +58,33 @@ class ExampleTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function testCreateInvalid()
+    // public function testCreateInvalid()
+    // {
+    //     $response = $this->get('/posts/create');
+
+    //     $response->assertStatus(500);
+    // }
+
+    // public function testLoginValid()
+    // {
+    //     $user = factory(User::class)->create(['password' => bcrypt($password = 'password')]);
+
+    //     $response = $this->get('/login', [
+    //         'email' => $user->email,
+    //         'password' => $password,
+    //     ]);
+
+    //     $response->assertStatus(200);
+    // }
+
+    public function testLoginInvalid()
     {
-        $response = $this->get('/posts/create');
+        $user = factory(User::class)->create();
 
-        $response->assertStatus(500);
+        $response = $this->get('/login');
+
+        $response->assertStatus(200);
     }
-
-
 }
 
 // Route::get('/posts/create', ['as' => 'create-post', 'uses' => 'PostsController@create']);
