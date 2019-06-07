@@ -12,7 +12,7 @@ class TagsController extends Controller
     {
         $posts = $tag->posts;
 
-        return view('posts.index', compact('posts'));
+        return view('tags.index', compact('posts'));
     }
 
     public function store(Request $request)

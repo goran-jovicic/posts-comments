@@ -12,9 +12,6 @@ use App\Http\Middleware\CheckAge;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/posts/create', ['as' => 'create-post', 'uses' => 'PostsController@create']);
 
